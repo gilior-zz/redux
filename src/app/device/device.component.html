@@ -6,7 +6,10 @@
     <input #inp (change)="onChk(inp.checked)" type="checkbox"/> {{deviceGroup.name}}
   </div>
   <ng-container *ngIf="!showDownArrow">
-    <div  class="col-xs-12 device-item" *ngFor="let device of deviceGroup.devices">hh</div>
+    <div class="col-xs-12 device-item" *ngFor="let device of deviceGroup.devices">
+      <input [checked]="device.active" type="checkbox">
+      {{device.name}}
+    </div>
   </ng-container>
 
 </div>

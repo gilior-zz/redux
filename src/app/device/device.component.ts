@@ -21,6 +21,6 @@ export class DeviceComponent implements OnInit {
   }
 
   onChk(checked: Boolean) {
-    console.log(checked);
+
   }
 }
