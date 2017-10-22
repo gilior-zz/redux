@@ -10,6 +10,7 @@ import {DeviceGroup} from "../../model";
 export class DeviceComponent implements OnInit {
 
   @Input() deviceGroup: DeviceGroup;
+  showDownArrow:boolean ;
 
 
   constructor(private  dataService: DataService) {
@@ -19,4 +20,7 @@ export class DeviceComponent implements OnInit {
 
   }
 
+  onChk(checked: Boolean) {
+    console.log(checked);
+  }
 }
