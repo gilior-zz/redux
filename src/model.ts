@@ -1,11 +1,27 @@
 export interface Device {
   id: number;
   name: string;
-  active:boolean;
+  active: number;
+
 }
 
-export  interface DeviceGroup{
+export interface Device_Group {
   id: number;
   name: string;
-  devices:Device[];
+  devices: Device[];
 }
+
+export interface Protocol {
+  id: number;
+  name: string
+  active: boolean;
+}
+
+export interface Time {
+  id: number;
+  name: string;
+  active: boolean;
+}
+
+
+

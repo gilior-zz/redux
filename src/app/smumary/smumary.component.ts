@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { select } from '@angular-redux/store';
+import { Observable } from 'rxjs/Observable';
+import { Device_Group, Protocol, Time } from 'model';
+import { Action } from 'store/action';
 
 @Component({
   selector: 'cb-smumary',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SmumaryComponent implements OnInit {
 
-  constructor() { }
+  @select('selected_protocols') protocols$: Observable<Protocol>
+  @select('selected_time') time$: Observable<Time>
+  constructor(private action: Action) { }
 
   ngOnInit() {
+  }
+
+  onClear() {
+    this.action.clearSelected()
   }
 
 }

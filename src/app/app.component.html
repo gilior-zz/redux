@@ -2,17 +2,21 @@
   <div class="row">
     <div class="col-md-3 col-xs-12">
       1 Select Blackboxes
-      <cb-device [deviceGroup]="device" *ngFor="let device of (devices|async)?.device_groups"></cb-device>
+      <cb-device  [summaryMode]="false"></cb-device>
     </div>
     <div class="col-md-3 col-xs-12">
-      <cb-protocol></cb-protocol>
+        2 Select Protocols
+      <cb-protocol   [summaryMode]="false"></cb-protocol>
     </div>
     <div class="col-md-3 col-xs-12">
+        3 Select Time period
       <cb-time-period></cb-time-period>
     </div>
     <div class="col-md-3 col-xs-12">
+      summary
       <cb-smumary></cb-smumary>
     </div>
   </div>
-</div>
+</div> 
+
 

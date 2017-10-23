@@ -1,0 +1,33 @@
+h3,.h6{
+    display: inline;
+   
+}
+
+
+.arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    
+    border-left: 5px solid white;
+  }
+
+  .blue{
+      background: blue;
+     padding: 10px;
+  }
+
+  .row{
+      margin: 0;
+  }
+
+  .clear{
+  cursor: pointer;
+      font-size: smaller;     
+  }
+
+  .learn{
+    color: white;
+    cursor: pointer;
+  }
