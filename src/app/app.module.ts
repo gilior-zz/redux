@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { DeviceComponent } from './device/device.component';
 import {DataService} from "./services/data.service";
@@ -27,8 +27,7 @@ import { DeviceGroupComponent } from './device-group/device-group.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgReduxModule,
-    FormsModule
+    NgReduxModule,    
   ],
   providers: [
     DataService,
