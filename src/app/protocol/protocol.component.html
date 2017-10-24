@@ -1,4 +1,4 @@
-<div [style.background]="summaryMode?'white':'lightblue'" class="row">
+<div [style.background]="summaryMode?'white':'#D8E8F6'" class="row">
 
   <div class="col-xs-12" *ngFor="let protocol of protocols$|async">
     <ng-container *ngIf="(!summaryMode || protocol.active==1)">

@@ -14,11 +14,7 @@
     <span class="place-holder" *ngIf="(selected_protocols$|async).length==0">Select Protocols</span>
     <cb-protocol [summaryMode]="true"></cb-protocol>
      <hr  />
-  </div>
-
- 
-  
- 
+  </div>    
   <div class="col-xs-12">
       <h3>3</h3>
     {{(time$|async)?.name}}
@@ -27,7 +23,9 @@
  
   
   <div class="col-xs-12 final-wrp">
-    <small class="pointer" (click)="onClear()">Clear</small>
-    <span class="pointer lrn" (click)="onStartLearning()">Start Learning</span>
+    <small class="pointer clear" (click)="onClear()">Clear</small>
+    <span class="pointer lrn" (click)="onStartLearning()">
+      <img src="assets/play_1_burned.png" alt="">
+      Start Learning</span>
   </div>
 </div>

@@ -64,7 +64,9 @@ function clearSelected(state, action): IAppState {
   state.selected_protocols.forEach(element => {
     element.active = 0
   });
-return Object.assign({},state)
+
+
+  return Object.assign({}, state)
 }
 
 
