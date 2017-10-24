@@ -15,6 +15,7 @@ export class DeviceGroupComponent implements OnInit {
   constructor(private action: Action) { }
 
   ngOnInit() {
+    this.isGrpChecked = this.deviceGroup.devices.find(i => i.active == 0) == null;
   }
 
   get arrowClass() {
