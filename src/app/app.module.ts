@@ -12,6 +12,7 @@ import { NgReduxModule,NgRedux } from '@angular-redux/store';
 import { IAppState } from 'store/IAppState';
 import { store } from 'store/store';
 import { Action } from 'store/action';
+import { DeviceGroupComponent } from './device-group/device-group.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { Action } from 'store/action';
     DeviceComponent,
     ProtocolComponent,
     TimePeriodComponent,
-    SmumaryComponent
+    SmumaryComponent,
+    DeviceGroupComponent
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,9 @@
 <div class="row">
   <ng-container *ngFor="let device_group of (device_groups$|async)">
-    <div [class.noShow]="summaryMode" class="col-xs-12 device-header">
-      <span (click)="showDownArrow=!showDownArrow" [ngClass]="arrowClass"></span>
-      <span></span>
-      <input #groupIput (change)="onGroupChk(groupIput.checked,device_group)" type="checkbox" /> {{device_group.name}}
-    </div>
-    <ng-container *ngIf="!showDownArrow">
-      <div class="col-xs-12 device-item" *ngFor="let device of device_group.devices">
-        <input  *ngIf="!summaryMode" #item (change)="onItemChk(item.checked,device,device_group)" [checked]="(device.active||groupIput.checked)"
-          type="checkbox">
-        <span *ngIf="(!summaryMode || device.active==1)">
-          {{device.name}}
-        </span>
 
-      </div>
-    </ng-container>
+    <cb-device-group [deviceGroup]="device_group" [summaryMode]="summaryMode"></cb-device-group>
+
+
+
   </ng-container>
 </div>
