@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,IAAI;EACA,UAAU,EAAC,SAAS;EACpB,YAAY,EAAE,IAAI",
-"sources": ["time-period.component.scss"],
-"names": [],
-"file": "time-period.component.css"
-}

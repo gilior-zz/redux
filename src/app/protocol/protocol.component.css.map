@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,IAAI;EAEA,YAAY,EAAE,IAAI",
-"sources": ["protocol.component.scss"],
-"names": [],
-"file": "protocol.component.css"
-}
