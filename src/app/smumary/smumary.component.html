@@ -3,32 +3,31 @@
     <h3>
       1
     </h3>
-
     <cb-device [summaryMode]="true"></cb-device>
-    <hr>
-
+    <hr  />
+    
   </div>
+  <div class="col-xs-12">
+    <h3>
+      2
+    </h3>
+    <span class="place-holder" *ngIf="(selected_protocols$|async).length==0">Select Protocols</span>
+    <cb-protocol [summaryMode]="true"></cb-protocol>
+     <hr  />
+  </div>
+
+ 
   
-
-  <div class="col-xs-12" *ngFor="let protocol of protocols$|async">
-      <h3>
-          2
-        </h3>
-    {{protocol.name}}
-  </div>
-  <hr>
-
+ 
   <div class="col-xs-12">
       <h3>3</h3>
     {{(time$|async)?.name}}
+     <hr  />
   </div>
-  <hr>
-  <div class="col-xs-12">
-    <span (click)="onClear()" class="clear">Clear</span>
-    <span class="blue">
-      <span class="learn">arrow</span>
-      <span class="learn">Start Learning</span>
-    </span>
+ 
+  
+  <div class="col-xs-12 final-wrp">
+    <small class="pointer" (click)="onClear()">Clear</small>
+    <span class="pointer lrn" (click)="onStartLearning()">Start Learning</span>
   </div>
-
 </div>
