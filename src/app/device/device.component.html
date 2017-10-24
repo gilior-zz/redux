@@ -1,9 +1,4 @@
-<div class="row">
-  <ng-container *ngFor="let device_group of (device_groups$|async)">
-
-    <cb-device-group [deviceGroup]="device_group" [summaryMode]="summaryMode"></cb-device-group>
-
-
-
-  </ng-container>
+<div class="row">  
+    <cb-device-group  *ngFor="let device_group of (device_groups$|async)" [deviceGroup]="device_group" [summaryMode]="summaryMode">
+      </cb-device-group> 
 </div>

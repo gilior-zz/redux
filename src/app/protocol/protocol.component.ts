@@ -12,6 +12,7 @@ import { Action } from 'store/action';
 export class ProtocolComponent implements OnInit {
   @Input() summaryMode: boolean;
   @select('protocols') protocols$: Observable<Protocol>
+  
   constructor(private action: Action) { }
 
   ngOnInit() {

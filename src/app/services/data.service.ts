@@ -16,9 +16,19 @@ export class DataService {
     return this.http.get<T>(url);
   }
 
+
+
   start() {
     let httpParams = new HttpParams();
 
+    httpParams = this.handleDevices(httpParams);
+    httpParams = this.handleProtocols(httpParams);
+    httpParams = this.handleTime(httpParams);
+
+    this.http.get(document.URL, { responseType: 'text', params: httpParams }).subscribe();
+  }
+
+  handleDevices(httpParams: HttpParams) {
     let devices: string[] = [];
     this.device_groups$.subscribe(grps => {
       grps.forEach(grp => {
@@ -28,23 +38,27 @@ export class DataService {
         })
       })
     })
-    httpParams = httpParams.set('devices', devices.join())
+    return httpParams.set('devices', devices.join())
+  }
 
+  handleProtocols(httpParams: HttpParams) {
     let protocols: string[] = [];
     this.protocols$.subscribe(prtcls => {
       prtcls.forEach(protocol => {
         if (protocol.active)
           protocols.push(String(protocol.id))
       })
-
     })
-    httpParams = httpParams.set('protocols', protocols.join())
+    return httpParams.set('protocols', protocols.join())
+  }
 
+  handleTime(httpParams: HttpParams) {
+    let times: string[] = [];
     this.time$.subscribe(time => {
-      httpParams = httpParams.set('times', String(time.id))
-    })
 
-    this.http.get(document.URL, { responseType: 'text', params: httpParams }).subscribe();
+      times.push(String(time.id))
+    })
+    return httpParams.set('times', times.join())
   }
 
 }

@@ -21,23 +21,5 @@ export class DeviceComponent implements OnInit {
   }
 
   ngOnInit() {
-
-  }
-
-  get arrowClass() {
-    return {
-      'arrow-down': this.showDownArrow,
-      'arrow-up': !this.showDownArrow,
-    }
-  }
-
-  onGroupChk(checked: Boolean, device_group: Device_Group) {
-    this.unCheckAll = !checked;
-  }
-
-  onItemChk(checked: Boolean, device: Device, device_group: Device_Group) {    
-    this.action.updateDevice(device, device_group,+checked)
-  }
-
-
+  } 
 }
