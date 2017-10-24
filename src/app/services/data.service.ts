@@ -7,7 +7,7 @@ import { HttpParams } from '@angular/common/http';
 @Injectable()
 export class DataService {
   @select('device_groups') device_groups$: Observable<Device_Group[]>
-  @select('protocols') protocols$: Observable<Protocol>
+  @select('protocols') protocols$: Observable<Protocol[]>
   @select('selected_time') time$: Observable<Time>
   constructor(private http: HttpClient) {
   }
@@ -18,6 +18,7 @@ export class DataService {
 
   start() {
     let httpParams = new HttpParams();
+
     let devices: string[] = [];
     this.device_groups$.subscribe(grps => {
       grps.forEach(grp => {
@@ -26,17 +27,18 @@ export class DataService {
             devices.push(String(device.id))
         })
       })
-      httpParams = httpParams.set('devices', devices.join())
+    })
+    httpParams = httpParams.set('devices', devices.join())
 
-      let protocols: string[] = [];
-      this.protocols$.subscribe(protocol => {
+    let protocols: string[] = [];
+    this.protocols$.subscribe(prtcls => {
+      prtcls.forEach(protocol => {
         if (protocol.active)
           protocols.push(String(protocol.id))
       })
-      httpParams = httpParams.set('protocols', protocols.join())
 
-    }
-    )
+    })
+    httpParams = httpParams.set('protocols', protocols.join())
 
     this.time$.subscribe(time => {
       httpParams = httpParams.set('times', String(time.id))
