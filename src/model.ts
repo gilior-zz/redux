@@ -9,6 +9,7 @@ export interface Device_Group {
   id: number;
   name: string;
   devices: Device[];
+  active: number;
 }
 
 export interface Protocol {

@@ -15,6 +15,9 @@ function storeData(state, action): IAppState {
   action.data.protocols.forEach(element => {
     element.active = false
   });
+  action.data.device_groups.forEach(element => {
+    element.active = false
+  });
   return Object.assign({}, state, {
     device_groups: action.data.device_groups,
     selected_device_groups: action.data.device_groups,
@@ -52,6 +55,7 @@ function updateDevices(state, action): IAppState {
 
 function clearSelected(state, action): IAppState {
   state.device_groups.forEach(element => {
+    element.active = 0;
     element.devices.forEach(element => {
       element.active = 0
     });

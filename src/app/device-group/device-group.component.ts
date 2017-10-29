@@ -15,7 +15,7 @@ export class DeviceGroupComponent implements OnInit {
   constructor(private action: Action) { }
 
   ngOnInit() {
-    this.isGrpChecked = this.deviceGroup.devices.find(i => i.active == 0) == null;
+    this.deviceGroup.active =+(this.deviceGroup.devices.find(i => i.active == 0) == null);this.deviceGroup.active =+(this.deviceGroup.devices.find(i => i.active == 0) == null);
   }
 
   get arrowClass() {
@@ -26,7 +26,7 @@ export class DeviceGroupComponent implements OnInit {
   }
 
   onGroupChk(checked: boolean, device_group: Device_Group) {
-    this.isGrpChecked = checked;
+    this.deviceGroup.active = +checked;
     this.deviceGroup.devices.forEach(item => {
       this.onItemChk(checked, item, this.deviceGroup)
     })
